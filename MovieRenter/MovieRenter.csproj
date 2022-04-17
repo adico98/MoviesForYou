@@ -1,0 +1,122 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon />
+    <StartupObject />
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Images\GenreIcon.jpg" />
+    <None Remove="Images\MoviesIcon.png" />
+    <None Remove="Images\RentedIcon.png" />
+    <None Remove="Images\RentIcon.png" />
+    <None Remove="Images\ReviewIcon.png" />
+    <None Remove="Images\UserIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ClosedXML" Version="0.95.4" />
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
+    <PackageReference Include="MailKit" Version="3.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="3.1.13" />
+    <PackageReference Include="Microsoft.VisualBasic" Version="10.3.0" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.Wpf" Version="1.1.39" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\GenreIcon.jpg" />
+    <Resource Include="Images\MoviesIcon.png" />
+    <Resource Include="Images\RentedIcon.png" />
+    <Resource Include="Images\RentIcon.png" />
+    <Resource Include="Images\ReviewIcon.png" />
+    <Resource Include="Images\UserIcon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+	    <Compile Update="Views\AddReviewView.xaml.cs">
+      <DependentUpon>AddReviewView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\DeleteReviewReason.xaml.cs">
+      <DependentUpon>DeleteReviewReason.xaml</DependentUpon>
+    </Compile>
+	<Compile Update="Views\MovieReviewsList.xaml.cs">
+      <DependentUpon>MovieReviewsList.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\UsersView.xaml.cs">
+      <DependentUpon>UsersView.xaml</DependentUpon>
+    </Compile>
+	    <Compile Update="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\EntranceView.xaml.cs">
+      <DependentUpon>EntranceView.xaml</DependentUpon>
+    </Compile>
+	<Compile Update="Views\MoviesView.xaml.cs">
+      <DependentUpon>MoviesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\RentedMoviesView.xaml.cs">
+      <DependentUpon>RentedMoviesView.xaml</DependentUpon>
+    </Compile>
+	    <Compile Update="Views\ReportsView.xaml.cs">
+      <DependentUpon>ReportsView.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SelectedMovieView.xaml.cs">
+      <DependentUpon>SelectedMovieView.xaml</DependentUpon>
+    </Compile>
+	    <Compile Update="Views\UsersReviewsView.xaml.cs">
+      <DependentUpon>UsersReviewsView.xaml</DependentUpon>
+    </Compile>
+</ItemGroup>
+
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\AddReviewView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\DeleteReviewReason.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\EntranceView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsersView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MovieReviewsList.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\MoviesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\RentedMoviesView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\ReportsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SelectedMovieView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UsersReviewsView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
+</Project>

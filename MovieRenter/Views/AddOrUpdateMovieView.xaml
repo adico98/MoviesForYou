@@ -1,0 +1,71 @@
+﻿<Window x:Class="MovieRenter.Views.AddOrUpdateMovieView"
+        x:Name="ChangeMovieInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieRenter.Views"
+        xmlns:vm="clr-namespace:MovieRenter.ViewModels"
+        xmlns:conv="clr-namespace:MovieRenter.Converters"
+        mc:Ignorable="d"
+       WindowStyle="ToolWindow" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterOwner" Width="900">
+    <Window.DataContext>
+        <vm:AddOrUpdateMovieViewModel/>
+    </Window.DataContext>
+    <Grid Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Margin="20,20,0,0" Orientation="Vertical">
+            <StackPanel VerticalAlignment="Top" Margin="0,0,0,10">
+                <TextBlock TextWrapping="Wrap" Text="Title" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding SelectedMovie.Title}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+            </StackPanel>
+            <UniformGrid Margin="0" UseLayoutRounding="False" Columns="2" Rows="4">
+                <StackPanel Margin="0,10,0,0">
+                    <TextBlock  TextWrapping="Wrap" Text="Actors" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                    <TextBox  Text="{Binding SelectedMovie.Actors, Mode=TwoWay}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" />
+                </StackPanel>
+
+                <StackPanel Margin="0,10,0,0">
+                    <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="Release Year" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox  HorizontalAlignment="Left" Text="{Binding SelectedMovie.ReleaseYear}" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Margin="0"/>
+                </StackPanel>
+                <StackPanel Margin="0,10,0,0">
+                    <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="Genre 1" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <ComboBox Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" ItemsSource="{Binding GenreList}"
+                            DisplayMemberPath ="Value" SelectedValuePath="Key"
+                          SelectedValue="{Binding Path=CurrGenre1, Mode=TwoWay}"></ComboBox>
+                </StackPanel>
+                <StackPanel Margin="0,10,0,0">
+                    <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="Genre 2" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <ComboBox Height="23" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" ItemsSource="{Binding GenreList}"
+                            DisplayMemberPath ="Value" SelectedValuePath="Key"
+                          SelectedValue="{Binding Path=CurrGenre2, Mode=TwoWay}"></ComboBox>
+                </StackPanel>
+                <StackPanel Margin="0,10,0,0">
+                    <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="Min age to watch" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox  Text="{Binding SelectedMovie.AgeRating}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                </StackPanel>
+                <StackPanel Margin="0,10,0,0" IsEnabled="{Binding IsAdd}">
+                    <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="MovieId" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+                    <TextBox  Text="{Binding SelectedMovie.MovieId}" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="100"/>
+                </StackPanel>
+            </UniformGrid>
+        </StackPanel>
+        <StackPanel Grid.Column="1" Margin="20,20,20,0" Orientation="Vertical">
+            <TextBlock  TextWrapping="Wrap" FontWeight="ExtraBold" Text="Image"/>
+            <Image   VerticalAlignment="Top" Source="{Binding SelectedMovie.Image, UpdateSourceTrigger=PropertyChanged}" Margin="10" Height="180" Width="200"/>
+            <Button Command="{Binding AddImageCommand}" Content="Load Image" Margin="10,0,0,0" Width="60" Height="25"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" Margin="20,20,20,0" Orientation="Vertical">
+            <TextBlock FontWeight="ExtraBold" TextWrapping="Wrap" Text="Plot"/>
+            <TextBox  Text="{Binding SelectedMovie.Plot}" HorizontalAlignment="Left" Height="180" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" VerticalScrollBarVisibility="Auto"/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,20">
+                <Button  Command="{Binding SaveCommand}" CommandParameter="{Binding ElementName=ChangeMovieInfo}" Content="Save" Margin="10,0,0,0" Width="60" Height="25"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

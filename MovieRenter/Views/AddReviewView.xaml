@@ -1,0 +1,42 @@
+﻿<Window x:Class="MovieRenter.Views.AddReviewView"
+        x:Name="AddReview"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MovieRenter.Views"
+        xmlns:vm="clr-namespace:MovieRenter.ViewModels"
+        xmlns:conv="clr-namespace:MovieRenter.Converters"
+        mc:Ignorable="d"
+        Title="AddReview" Height="420" Width="280"  WindowStartupLocation="CenterOwner" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:AddReviewViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <conv:RatingToBooleanConverter x:Key="RatingToBooleanConverter"/>
+    </Window.Resources>
+    <Grid Background="AliceBlue">
+        <StackPanel Margin="0,20,0,0" Orientation="Vertical" HorizontalAlignment="Center">
+            <StackPanel VerticalAlignment="Top" Margin="0,0,0,10">
+                <TextBlock TextWrapping="Wrap" Text="Movie Title" HorizontalAlignment="Left" VerticalAlignment="Top" FontWeight="ExtraBold"/>
+                <TextBox HorizontalAlignment="Left" Text="{Binding MovieName, Mode=OneTime}" IsEnabled="False" IsReadOnly="True" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+            </StackPanel>
+            <StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <RadioButton Margin="10" FontWeight="ExtraBold" IsChecked="{Binding MovieRating, Converter={StaticResource RatingToBooleanConverter}, ConverterParameter=1}">1</RadioButton>
+                    <RadioButton Margin="10" FontWeight="ExtraBold" IsChecked="{Binding MovieRating, Converter={StaticResource RatingToBooleanConverter}, ConverterParameter=2}">2</RadioButton>
+                    <RadioButton Margin="10" FontWeight="ExtraBold" IsChecked="{Binding MovieRating, Converter={StaticResource RatingToBooleanConverter}, ConverterParameter=3}">3</RadioButton>
+                    <RadioButton Margin="10" FontWeight="ExtraBold" IsChecked="{Binding MovieRating, Converter={StaticResource RatingToBooleanConverter}, ConverterParameter=4}">4</RadioButton>
+                    <RadioButton Margin="10" FontWeight="ExtraBold" IsChecked="{Binding MovieRating, Converter={StaticResource RatingToBooleanConverter}, ConverterParameter=5}">5</RadioButton>
+                </StackPanel>
+            </StackPanel>
+            <StackPanel>
+                <TextBlock TextWrapping="Wrap" FontWeight="ExtraBold" Text="Your Review:" Margin="0, 20, 0, 0"/>
+                <TextBox Text="{Binding ReviewDesc}" HorizontalAlignment="Left" Height="180" TextWrapping="Wrap" VerticalAlignment="Top" Width="200" VerticalScrollBarVisibility="Auto"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0, 20, 0,0">
+                <Button Content="Save" Margin="10,0,0,0" Width="60" Height="25" Command="{Binding SaveReviewCommand}"  CommandParameter="{Binding ElementName=AddReview}" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

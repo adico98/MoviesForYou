@@ -1,0 +1,62 @@
+﻿<Window x:Class="MovieRenter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:MovieRenter.ViewModels"
+        xmlns:conv="clr-namespace:MovieRenter.Converters"
+        xmlns:local="clr-namespace:MovieRenter"
+        mc:Ignorable="d" 
+        Title="MoviesForYou" Height="900" Width="1300">
+    
+    <Window.Resources>
+        <vm:MainWindowViewModel x:Key="MainWindowViewModel"/>
+        <vm:Users x:Key="Users"/>
+        <conv:UserToVisibilityConverter x:Key="UserToVisibilityConverter"/>
+
+        <Style TargetType="Menu">
+            <Setter Property="Background" Value="#0078D7" />
+            <Setter Property="Height" Value="40px" />
+        </Style>
+
+        <ControlTemplate x:Key="MenuTab" TargetType="MenuItem">
+            <StackPanel TextBlock.FontSize="15px" Height="40">
+                <Label Content="{TemplateBinding Header}" Margin="5" Foreground="White" />
+                <StackPanel.Style>
+                    <Style TargetType="StackPanel">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"  Value="True">
+                                <Setter Property="Background" Value="#106EBE" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Style>
+            </StackPanel>
+        </ControlTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <Binding Source="{StaticResource MainWindowViewModel}"/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Menu IsMainMenu="True" Grid.Row="0">
+            <MenuItem Header="_Profile" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Member}}" Command="{Binding ViewProfileCommand}" CommandParameter="Profile"/>
+            <MenuItem Header="_Movies" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}}" Command="{Binding UpdateCurrViewCommand}" CommandParameter="Movies"/>
+            <MenuItem Header="_Rented Movies" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Member}}" Command="{Binding UpdateCurrViewCommand}" CommandParameter="RentedMovies"/>
+            <MenuItem Header="_Users" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Admin}}" Command="{Binding UpdateCurrViewCommand}" CommandParameter="Users"/>
+            <MenuItem Header="_Reviews" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Admin}}" Command="{Binding UpdateCurrViewCommand}" CommandParameter="Reviews"/>
+            <MenuItem Header="_Reports" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Admin}}" Command="{Binding UpdateCurrViewCommand}" CommandParameter="Reports"/>
+            <MenuItem Header="_Login" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Guest}}" Command="{Binding LoginCommand}"/>
+            <MenuItem Header="_Logout" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Member}}" Command="{Binding LogoutCommand}"/>
+            <MenuItem Header="_Signup" Template="{StaticResource MenuTab}" Visibility="{Binding CurrUser, Converter={StaticResource UserToVisibilityConverter}, ConverterParameter={x:Static vm:Users.Guest}}" Command="{Binding SignupCommand}"/>
+        </Menu>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+            <Grid>
+                <ContentControl Content="{Binding SelectedViewModel}"/>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

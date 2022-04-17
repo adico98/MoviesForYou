@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MovieRenter.Command.UpdateViewCommand" BaseTypeListCollapsed="true">
+    <Position X="9" Y="8.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgACAgQAAEAQAAAAAAACAgAAAAAAAAAACAA=</HashCode>
+      <FileName>Command\UpdateViewCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MovieRenter.ViewModels.EntranceViewModel">
+    <Position X="10.75" Y="4" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgAAAAAAAAAAgAAAAAACAAAAIAQAACAAAA=</HashCode>
+      <FileName>ViewModels\EntranceViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.LoginViewModel">
+    <Position X="8.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAQAAAAEAAAAAAAACAAAQAgCAAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.MainWindowViewModel">
+    <Position X="13.75" Y="3.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAAADAAAAAgACAAQAAAAEgIAIAQACAAABIAQAACAAIA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.ViewModelBase">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="MovieRenter.ViewModels.Users">
+    <Position X="13.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

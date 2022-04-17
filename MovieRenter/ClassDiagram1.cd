@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="MovieRenter.Command.UpdateViewCommand" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgACAgQAAEAQAAAAAAACAgAAAAAAAAAACAA=</HashCode>
+      <FileName>Command\UpdateViewCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="MovieRenter.Models.GenreModel" Collapsed="true">
+    <Position X="23.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Models\GenreModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.Models.MovieModel" Collapsed="true">
+    <Position X="23.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgEAAAAEAAAACAQAAABEAAAAEAAEAAAA=</HashCode>
+      <FileName>Models\MovieModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.Models.RentedMovieModel">
+    <Position X="9.25" Y="9" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAEIIAQAAAAAAAQEAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Models\RentedMovieModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.Models.ReviewModel" Collapsed="true">
+    <Position X="6.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAQAAAAEBAACAAAAAECA=</HashCode>
+      <FileName>Models\ReviewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.Models.UserModel" Collapsed="true">
+    <Position X="25.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAACAAAAAAAQAAAAAACAAQAAACAAAAAAAAAAg=</HashCode>
+      <FileName>Models\UserModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.AddOrUpdateMovieViewModel">
+    <Position X="14.75" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAgASAAIAEgAAAKQAIAAEBCAAAQQAAAAEAAA=</HashCode>
+      <FileName>ViewModels\AddOrUpdateMovieViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.AddOrUpdateUserViewModel">
+    <Position X="20.5" Y="1.75" Width="4.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAgAAAAAAAACgAQIAABEAAQgQAQgAAAEAAA=</HashCode>
+      <FileName>ViewModels\AddOrUpdateUserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.AddReviewViewModel">
+    <Position X="10" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>RAQIBAAEAASAAAAAAAAAAAAAAAAAAAAAAAAABIAAAAA=</HashCode>
+      <FileName>ViewModels\AddReviewViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.EntranceViewModel">
+    <Position X="0.5" Y="1.75" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgAAAAAAAAAAgAAAAAACAAAAIAQAACAAAA=</HashCode>
+      <FileName>ViewModels\EntranceViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.LoginViewModel">
+    <Position X="3.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAAAAAQAAAAEAAAAAAAACAAAQAgCAAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.MainWindowViewModel">
+    <Position X="2.25" Y="5.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>QAAADAAAAAgACAAQAAAAEgIAIAQACAAABIAQAACAAIA=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.MovieReviewsViewModel">
+    <Position X="7" Y="1.25" Width="3" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MovieReviewsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.MoviesViewModel">
+    <Position X="18.25" Y="9.75" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AACAABAAIAAAAAAAEIAAEMAQABCQBAAAACQRACAAAgQ=</HashCode>
+      <FileName>ViewModels\MoviesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.RentedMoviesViewModel">
+    <Position X="6.5" Y="10" Width="2" />
+    <TypeIdentifier>
+      <HashCode>CAAACAAAMIAAAAAABAAAAEAAEAAAAAAAAAAgAAAAAAA=</HashCode>
+      <FileName>ViewModels\RentedMoviesViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.ReportsViewModel">
+    <Position X="21.5" Y="7.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AACIAAAABAAEAAAAAAAhAAAAAAAgAAAAIAAEAAEACgA=</HashCode>
+      <FileName>ViewModels\ReportsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.SelectedMovieViewModel">
+    <Position X="23.5" Y="11.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>CKAAAAIAQoCAEgIAAAIAAIASAgKIgAACAIIAAAAAACA=</HashCode>
+      <FileName>ViewModels\SelectedMovieViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.UsersReviewsViewModel">
+    <Position X="14.5" Y="1.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>CAIQAAAAAEAAAICAAAgAAAAAAEAAAYBgAAEAAAAAAAA=</HashCode>
+      <FileName>ViewModels\UsersReviewsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.UsersViewModel">
+    <Position X="18" Y="1.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAAAAAAAAAAQAgAAAgACAIAQAAABE=</HashCode>
+      <FileName>ViewModels\UsersViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MovieRenter.ViewModels.ViewModelBase">
+    <Position X="0.5" Y="10.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Enum Name="MovieRenter.ViewModels.ReportsEnum" Collapsed="true">
+    <Position X="26.5" Y="10.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAQAAAAAIAAAAAAAAgAAAACBAAAAABAAAA=</HashCode>
+      <FileName>ViewModels\ReportsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="MovieRenter.ViewModels.Users" Collapsed="true">
+    <Position X="0.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQAAAAAIAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>ViewModels\MainWindowViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

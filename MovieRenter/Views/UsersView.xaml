@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="MovieRenter.Views.UsersView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MovieRenter.Views"
+             xmlns:vm="clr-namespace:MovieRenter.ViewModels"
+             xmlns:conv="clr-namespace:MovieRenter.Converters"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=vm:UsersViewModel}" Background="AliceBlue">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="FontWeight"
+                  Value="Bold" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="15, 10, 0, 0">
+            <TextBlock HorizontalAlignment="Left" Text="Users List" FontWeight="ExtraBold" FontSize="55"></TextBlock>
+            <Button HorizontalAlignment="Left" FontSize="20" FontWeight="ExtraBold" Content="Add Users"  Width="120" Height="40" Margin="290, 20, 0, 0" Command="{Binding AddUserCommand}"></Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Margin="10, 20, 10, 10">
+                <DataGrid FontSize="16" ItemsSource="{Binding MembersList}" AutoGenerateColumns="False" Background="{x:Null}" SelectionMode="Single" CanUserDeleteRows="False" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Username}" ClipboardContentBinding="{x:Null}" Width="1*" Header="Username"  IsReadOnly="true"/>
+                        <DataGridTextColumn Binding="{Binding Firstname}" ClipboardContentBinding="{x:Null}" Width="1*" Header="Name" IsReadOnly="true"/>
+                        <DataGridTextColumn Binding="{Binding LastName}" ClipboardContentBinding="{x:Null}" Width="1*" Header="Surname" IsReadOnly="true"/>
+                        <DataGridTextColumn Binding="{Binding Password}" ClipboardContentBinding="{x:Null}" Width="1*" Header="Password" IsReadOnly="true"/>
+                        <DataGridTextColumn Binding="{Binding Email}" ClipboardContentBinding="{x:Null}" Width="2*" Header="Email" IsReadOnly="true"/>
+                        <DataGridTextColumn Binding="{Binding DateOfBirth, StringFormat=\{0:d\}}" ClipboardContentBinding="{x:Null}" Width="1*" Header="Birth Of Date" IsReadOnly="true"/>
+                        <DataGridCheckBoxColumn Binding="{Binding IsAdmin}" ClipboardContentBinding="{x:Null}" Header="Is Admin" IsReadOnly="true"/>
+                        <DataGridTemplateColumn Width="1*">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Command="{Binding Path=DataContext.UpdateUserCommand, 
+                                        RelativeSource={RelativeSource AncestorType={x:Type local:UsersView}}}"
+                                    CommandParameter="{Binding}">Update user</Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</UserControl>
